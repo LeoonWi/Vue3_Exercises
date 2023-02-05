@@ -2,8 +2,9 @@
   export default {
     data() {
       return {
-        name: 'page',
-        href: '../page.html'
+        num1: 10,
+        num2: 15,
+        num3: 20,
       }
     }
   }
@@ -11,7 +12,8 @@
 
 <template>
   <div>
-    <a :href="href">{{ name }}</a> <!-- для работы с атрибутами, нужно юзать v-bind:свойство или :свойство -->
+    <h1>Возведение {{ num1 }} в степень: {{ Math.pow(num1,2) }}</h1>
+    <h1>Сумма: {{ num1 }} + {{ num2 }} + {{ num3 }} = {{ num1 + num2 + num3 }}</h1>
   </div>
 </template>
 
