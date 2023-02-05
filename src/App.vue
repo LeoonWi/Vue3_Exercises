@@ -2,8 +2,8 @@
   export default {
     data() {
       return {
-        name: 'LeoonWi',
-        age: '19',
+        name: 'page',
+        href: '../page.html'
       }
     }
   }
@@ -11,10 +11,7 @@
 
 <template>
   <div>
-    <h1>{{ name }}</h1>
-  </div>
-  <div>
-    <h1>{{ age }}</h1>
+    <a :href="href">{{ name }}</a> <!-- для работы с атрибутами, нужно юзать v-bind:свойство или :свойство -->
   </div>
 </template>
 
