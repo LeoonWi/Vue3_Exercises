@@ -2,30 +2,20 @@
   export default {
     data() {
       return {
-        name: 'Фисташки',
-        cost: '50',
-        amount: '1500',
+        count: 0,
       }
     },
     methods: {
-      
-    },
-    computed: {
-      price: function() {
-        return this.cost * this.amount;
+      once: function() {
+        return this.count++;
       }
-    }
+    }    
   }
 </script>
 
 <template>
-  <div>
-    <p>{{ name }}: {{ amount }} шт. {{ cost }} руб./шт.</p>
-    <p>Итого: {{ price }} руб.</p><br>
-  </div>
-  <div>
-    Введите новую цену: <input type="text" v-model="cost">
-  </div>
+  <a href="https://youtube.com" @click.prevent>Youtube.com</a><br>
+  <button @click.once="once">Приветствие №{{ count }}</button>
 </template>
 
 <style>
