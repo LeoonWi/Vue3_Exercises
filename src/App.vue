@@ -2,25 +2,32 @@
   export default {
     data() {
       return {
-        num: '',
+        text: 'xxx',
       }
     },
     methods: {
-      show: function(str) {
-        if (str == 'sqr') alert(Math.pow(this.num, 2));
-        else if (str == 'pwr3') alert(Math.pow(this.num, 3));
+      show: function() {
+        this.text = 'xxx';
+      },
+      changeToY: function() {
+        this.text = 'yyy';
+      },
+      changeToZ: function() {
+        this.text = 'zzz';
       }
     }
   }
 </script>
 
 <template>
+  <h1>{{ text }}</h1><br>
   <div>
-    Введите число:<br>
-    <input type="text" v-model="num">
-  </div><br>
-  <button @click="show('sqr')">Возвести в квадрат</button><br>
-  <button @click="show('pwr3')">Возвести в третью степень</button>
+    <button @click="changeToY">Превратить в Y</button><br>
+    <button @click="changeToZ">Превратить в Z</button><br>
+  </div>
+  <div>
+    <button @click="show">Сбросить</button>
+  </div>
 </template>
 
 <style>
