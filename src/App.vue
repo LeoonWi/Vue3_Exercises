@@ -2,31 +2,29 @@
   export default {
     data() {
       return {
-        text: 'xxx',
+        name: 'Фисташки',
+        cost: '50',
+        amount: '1500',
       }
     },
     methods: {
-      show: function() {
-        this.text = 'xxx';
-      },
-      changeToY: function() {
-        this.text = 'yyy';
-      },
-      changeToZ: function() {
-        this.text = 'zzz';
+      
+    },
+    computed: {
+      price: function() {
+        return this.cost * this.amount;
       }
     }
   }
 </script>
 
 <template>
-  <h1>{{ text }}</h1><br>
   <div>
-    <button @click="changeToY">Превратить в Y</button><br>
-    <button @click="changeToZ">Превратить в Z</button><br>
+    <p>{{ name }}: {{ amount }} шт. {{ cost }} руб./шт.</p>
+    <p>Итого: {{ price }} руб.</p><br>
   </div>
   <div>
-    <button @click="show">Сбросить</button>
+    Введите новую цену: <input type="text" v-model="cost">
   </div>
 </template>
 
