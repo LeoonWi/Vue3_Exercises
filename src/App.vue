@@ -1,23 +1,21 @@
 <script>
   export default {
     data() {
-
+      return {
+        num1: 5,
+        num2: 10,
+      }
     },
     methods: {
       show: function() {
-        alert(Date());
+        alert(this.num1 + this.num2);
       }
     }
   }
 </script>
 
 <template>
-  <div>
-    <button v-on:click="show">Текущая дата кликом</button>
-  </div>
-  <div> <!-- Обраб. события вызываемся v-on: либо @ -->
-    <button @mouseover="show">Текущая дата наведением</button>
-  </div>
+  {{ show() }}
 </template>
 
 <style>
