@@ -28,9 +28,9 @@
     <p v-if="vis_three">Третий абзац!</p>
   </div>
   <div>
-    <button @click="first">Отобразить/скрыть первый абзац</button>
-    <button @click="second">Отобразить/скрыть второй абзац</button>
-    <button @click="third">Отобразить/скрыть третий абзац</button>
+    <button @click="first">{{ vis_one ? 'Скрыть' : 'Показать'}} первый абзац</button>
+    <button @click="second">{{ vis_two ? 'Скрыть' : 'Показать'}} второй абзац</button>
+    <button @click="third">{{ vis_three ? 'Скрыть' : 'Показать'}} третий абзац</button>
   </div>
 </template>
 
