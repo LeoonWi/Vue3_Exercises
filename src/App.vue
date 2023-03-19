@@ -14,7 +14,7 @@
 </script>
 
 <template>
-  <div v-if="vis">
+  <div v-show="vis">
     <p>1 абзац</p>
     <p>2 абзац</p>
     <p>3 абзац</p>
