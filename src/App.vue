@@ -2,24 +2,25 @@
   export default {
     data() {
       return {
-        vis: true,
+        items: [1, 2, 3, 4, 5],
       }
     },
     methods: {
-      visible: function() {
-        this.vis = !this.vis;
-      }
+      
     }    
   }
 </script>
 
 <template>
-  <div v-show="vis">
-    <p>1 абзац</p>
-    <p>2 абзац</p>
-    <p>3 абзац</p>
+  <div>
+    <div v-for="n in items">{{ n }}</div>
   </div>
-  <button @click="visible">{{ vis ? 'Показать':'Скрыть' }} абзацы</button>
+  <div>
+    <div v-for="n in items">{{ n**2 }}</div>
+  </div>
+  <div>
+    <ul><li v-for="n in items">{{ n }}</li></ul>
+  </div>
 </template>
 
 <style>
