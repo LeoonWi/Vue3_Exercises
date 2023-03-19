@@ -2,15 +2,20 @@
   export default {
     data() {
       return {
-        visible: true,
+        vis_one: true,
+        vis_two: true,
+        vis_three: true
       }
     },
     methods: {
-      vis: function() {
-        this.visible = true;
+      first: function() {
+        this.vis_one = !this.vis_one;
       },
-      unvis: function() {
-        this.visible = false;
+      second: function() {
+        this.vis_two = !this.vis_two;
+      },
+      third: function() {
+        this.vis_three = !this.vis_three;
       }
     }    
   }
@@ -18,12 +23,14 @@
 
 <template>
   <div>
-    <p v-if="visible">Первый абзац!</p>
-    <p v-if="!visible">Второй абзац!</p>
+    <p v-if="vis_one">Первый абзац!</p>
+    <p v-if="vis_two">Второй абзац!</p>
+    <p v-if="vis_three">Третий абзац!</p>
   </div>
   <div>
-    <button @click="vis" v-if="!visible">Показать первый абзац</button>
-    <button @click="unvis" v-if="visible">Показать второй абзац</button>
+    <button @click="first">Отобразить/скрыть первый абзац</button>
+    <button @click="second">Отобразить/скрыть второй абзац</button>
+    <button @click="third">Отобразить/скрыть третий абзац</button>
   </div>
 </template>
 
