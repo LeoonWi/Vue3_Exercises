@@ -3,26 +3,25 @@
     data() {
       return {
         obj: {
-          red: true,
-          dashed: false
-        },
+		    	hidden: true,
+		    },
       }
     },
     methods: {
-      
+      hide: function() {
+        this.obj.hidden = !this.obj.hidden;
+      }
     }
   }    
 </script>
 
 <template>
   <p :class="obj">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, cum.</p>
+  <button @click="hide">Спрятать/Отобразить</button>
 </template>
 
 <style>
-.red {
-  color: red;
-}
-.dashed {
-  text-decoration: underline;
-}
+  p.hidden {
+  	display: none;
+  }
 </style>
