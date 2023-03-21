@@ -2,7 +2,10 @@
   export default {
     data() {
       return {
-        cssClasses: "red",
+        obj: {
+          red: true,
+          dashed: false
+        },
       }
     },
     methods: {
@@ -12,11 +15,14 @@
 </script>
 
 <template>
-  <p :class="cssClasses">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, cum.</p>
+  <p :class="obj">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, cum.</p>
 </template>
 
 <style>
 .red {
   color: red;
+}
+.dashed {
+  text-decoration: underline;
 }
 </style>
