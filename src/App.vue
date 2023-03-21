@@ -46,5 +46,7 @@
 </template>
 
 <style>
-
+li {
+  color: red;
+}
 </style>
