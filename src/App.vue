@@ -2,30 +2,14 @@
   export default {
     data() {
       return {
-        num: 0,
-        res1: 0,
-        num1: 0,
-        num2: 0,
-        txt1: '',
-        txt2: '',
-        fio: '',
+        text: null,
+        text2: '',
         arr: [],
       }
     },
     methods: {
-      sqr: function() {
-        this.res1 = this.num**2;
-      },
-      sum: function() {
-        this.res2 = this.num1 + this.num2;
-      },
-      txt: function() {
-        let temp = this.txt1;
-        this.txt1 = this.txt2;
-        this.txt2 = temp;
-      },
       sep: function() {
-        this.arr = this.fio.split(' ');
+        this.arr = this.text2.split(',');
       }
     }
   }    
@@ -33,28 +17,15 @@
 
 <template>
   <div>
-    <input v-model="num">
-    <button @click="sqr">Отправить</button><br>
-    <p>Ответ: {{ res1 }}</p>
+    <p>{{ text }}</p>
+    <textarea v-model="text" cols="30" rows="10" placeholder="Введите текст"></textarea>
   </div>
   <div>
-    <input v-model="num1">
-    <input v-model="num2">
-    <button @click="sqr">Отправить</button><br>
-    <p>Ответ: {{ res2 }}</p>
-  </div>
-  <div>
-    <input v-model="txt1">
-    <input v-model="txt2">
-    <button @click="txt">Отправить</button><br>
-    <p>Ответ: {{ txt1 }} и {{ txt2 }}</p>
-  </div>
-  <div>
-    <input v-model="fio">
+    <textarea v-model="text2" cols="30" rows="10" placeholder="Введите что-нибудь"></textarea><br>
     <button @click="sep">Отправить</button><br>
-    <p>Ответ: {{ arr[0] }}</p>
-    <p>Ответ: {{ arr[1] }}</p>
-    <p>Ответ: {{ arr[2] }}</p>
+    <ul>
+      <li v-for="elem in arr">{{ elem }}</li>
+    </ul>
   </div>
 </template>
 
