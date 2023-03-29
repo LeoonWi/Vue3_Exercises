@@ -2,23 +2,55 @@
   export default {
     data() {
       return {
-        arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-        message: '',
+        users: [
+		    	{
+		    		id: 1,
+		    		name: 'name1',
+		    		salary: 100,
+		    		age: 30,
+		    	},
+		    	{
+		    		id: 2,
+		    		name: 'name2',
+		    		salary: 200,
+		    		age: 40,
+		    	},
+		    	{
+		    		id: 3,
+		    		name: 'name3',
+		    		salary: 300,
+		    		age: 50,
+		    	},
+		    ],
       };
     },
     methods: {
-      delElem: function(index) {
-        this.arr.splice(index, 1)
+      delUser: function(id) {
+        this.users = this.users.filter((user) => {
+          return user.id != id;
+        })
       }
     }
   }    
 </script>
 
 <template>
-    <button @click="delElem(index)">Удалить элемент</button><br>
-    <ul>
-      <li v-for="(elem, index) in arr" :key="index">{{ elem }}</li>
-    </ul>
+  <table>
+    <tr v-for="user in users" :key="user.id">
+      <td>
+        {{  user.name }}
+      </td>
+      <td>
+        {{ user.salary }}
+      </td>
+      <td>
+        {{ user.age }}
+      </td>
+      <td>
+        <button @click="delUser(user.id)">Удалить пользователя</button>
+      </td>
+    </tr>
+  </table>
 </template>
 
 <style>
