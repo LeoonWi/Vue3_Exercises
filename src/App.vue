@@ -2,25 +2,20 @@
   export default {
     data() {
       return {
-        arr: [],
+        arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
         message: '',
       };
     },
     methods: {
-      addElem: function() {
-        this.arr.push(this.message)
-      },
-      addElemToStart: function() {
-        this.arr.unshift(this.message)
+      delElem: function(index) {
+        this.arr.splice(index, 1)
       }
     }
   }    
 </script>
 
 <template>
-    <input type="text" v-model="message"><br>
-    <button @click="addElemToStart">Добавить новый элемен в начало</button><br>
-    <button @click="addElem">Добавить новый элемен в конец</button>
+    <button @click="delElem(index)">Удалить элемент</button><br>
     <ul>
       <li v-for="(elem, index) in arr" :key="index">{{ elem }}</li>
     </ul>
