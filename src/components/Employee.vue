@@ -1,14 +1,16 @@
 <script>
     export default {
+        props: ['name', 'surname', 'age'],
         data() {
             return {
-                name: 'Данил',
-                surname: 'Ромашкан',
+
             }
         },
     }
 </script>
 
 <template>
-    <p>{{ surname }} {{ name }}</p>
+    <p>{{ surname }}</p><br>
+    <p>{{ name }}</p><br>
+    <p>{{ age }}</p>
 </template>

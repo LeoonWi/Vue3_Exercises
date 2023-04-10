@@ -17,7 +17,7 @@
 </script>
 
 <template>
-  <Employer />
+  <Employer name="Данил" surname="Ромашкан" age="18"/>
 </template>
 
 <style>
