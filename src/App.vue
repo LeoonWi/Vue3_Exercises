@@ -7,7 +7,9 @@
     },
     data() {
       return {
-        
+        name: 'Данил',
+        surname: 'Ромашкан',
+        age: 18
       };
     },
     methods: {
@@ -17,7 +19,7 @@
 </script>
 
 <template>
-  <Employer :arr="[1, 2, 3, 4]"/>
+  <Employer :name="name" :surname="surname" :age="age"/>
 </template>
 
 <style>
