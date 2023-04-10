@@ -40,7 +40,16 @@
 				}
 				return user;
 			});
-		}
+		},
+		add(name, surn) {
+			let id = this.users.length + 1;
+			
+			this.users.push({
+				id,
+				name,
+				surn
+			});
+		}	
     }
   }    
 </script>
@@ -52,6 +61,7 @@
 	:surn = "user.surn"
 	@remove = "remove"
 	@change = "change"
+	@add = "add"
 	:key = "user.id"/>
 </template>
 
