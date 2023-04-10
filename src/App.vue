@@ -11,18 +11,15 @@
       };
     },
     methods: {
-		Name() {
-            alert('Данил');
-        },
-        Salary() {
-            alert('10000');
-        },
+		func(name, salary) {
+			alert(name + ' ' + salary);
+		}
     }
   }    
 </script>
 
 <template>
-  <Employer @show1="Name" @show2="Salary"/>
+  <Employer @show1="func"/>
 </template>
 
 <style>

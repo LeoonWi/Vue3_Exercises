@@ -1,23 +1,19 @@
 <script>
     export default {
-        emits: ['show1', 'show2'],
+        emits: ['show1'],
         data() {
             return {
                 
             };
         },
         methods: {
-            HandelName() {
-                this.$emit('show1');
-            },
-            HandelSalary() {
-                this.$emit('show2');
+            Handel(name, salary) {
+                this.$emit('show1', 'Данил', 'Ромашкан');
             },
         }
     }
 </script>
 
 <template>
-   <button @click="HandelName">Name</button>
-   <button @click="HandelSalary">Salary</button>
+   <button @click="Handel">Имя и оклад</button>
 </template>
