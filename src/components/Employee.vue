@@ -6,14 +6,9 @@
                 
             };
         },
-        methods: {
-            Handel(name, salary) {
-                this.$emit('show1', 'Данил', 'Ромашкан');
-            },
-        }
     }
 </script>
 
 <template>
-   <button @click="Handel">Имя и оклад</button>
+   <button @click="$emit('show1', 'Данил', 'Ромашкан')">Имя и оклад</button>
 </template>
