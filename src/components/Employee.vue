@@ -1,16 +1,16 @@
 <script>
     export default {
-        props: ['name', 'surname', 'age'],
+        props: ['arr'],
         data() {
             return {
-
+                
             }
         },
     }
 </script>
 
 <template>
-    <p>{{ surname }}</p><br>
-    <p>{{ name }}</p><br>
-    <p>{{ age }}</p>
+    <ul>
+        <li v-for="elem in arr">{{ elem }}</li>
+    </ul>
 </template>

@@ -17,7 +17,7 @@
 </script>
 
 <template>
-  <Employer name="Данил" surname="Ромашкан" age="18"/>
+  <Employer :arr="[1, 2, 3, 4]"/>
 </template>
 
 <style>
