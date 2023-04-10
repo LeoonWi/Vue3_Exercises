@@ -1,19 +1,23 @@
 <script>
     export default {
-        props: {
-            id: Number,
-            name: String,
-            salary: Number,
-            age: Number
-        },
+        emits: ['show1', 'show2'],
         data() {
             return {
                 
-            }
+            };
         },
+        methods: {
+            HandelName() {
+                this.$emit('show1');
+            },
+            HandelSalary() {
+                this.$emit('show2');
+            },
+        }
     }
 </script>
 
 <template>
-   <p>{{ id }} {{ name }} {{ salary }} {{ age }}</p><br>
+   <button @click="HandelName">Name</button>
+   <button @click="HandelSalary">Salary</button>
 </template>
