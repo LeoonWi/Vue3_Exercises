@@ -1,8 +1,9 @@
 <script>
     export default {
         props: {
+            id: Number,
             name: String,
-            surname: String,
+            salary: Number,
             age: Number
         },
         data() {
@@ -14,7 +15,5 @@
 </script>
 
 <template>
-    <p>{{ name }}</p><br>
-    <p>{{ surname }}</p><br>
-    <p>{{ age }}</p>
+   <p>{{ id }} {{ name }} {{ salary }} {{ age }}</p><br>
 </template>
